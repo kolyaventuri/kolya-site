@@ -49,7 +49,7 @@ export const GridItem = ({
         backgroundImage: `url(${background})`,
       }}
     >
-      <div className="w-full h-full top-0 left-0 transform -scale-x-100 bg-black opacity-50 group-hover:left-full transition-all duration-150" />
+      <div className="w-full h-full top-0 left-0 bg-black opacity-50 group-hover:opacity-25 transition-all duration-150" />
       <p
         className={cx(
           'text-5xl lg:text-7xl font-bold uppercase select-none p-0 m-0',

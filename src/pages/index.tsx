@@ -17,7 +17,7 @@ class Home extends React.Component {
             background=""
             className="border-b-4 lg:border-b-0 lg:border-r-4"
           />
-          <GridItem bottom right background="" text="Lighting" background="/images/lfx.png" />
+          <GridItem bottom right text="Lighting" background="/images/lfx.png" />
         </div>
       </div>
     );
