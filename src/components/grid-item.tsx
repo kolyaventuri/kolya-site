@@ -14,7 +14,7 @@ interface Props {
 
 export const GridItem = ({
   text,
-  background: _,
+  background,
   top,
   bottom,
   left,
@@ -42,10 +42,14 @@ export const GridItem = ({
   return (
     <div
       className={cx(
-        'text-white cursor-pointer w-full lg:w-1/2 relative p-0 m-0 flex flex-grow',
+        'group text-white cursor-pointer w-full lg:w-1/2 relative p-0 m-0 flex flex-grow bg-center bg-cover bg-blend-soft-light',
         className,
       )}
+      style={{
+        backgroundImage: `url(${background})`,
+      }}
     >
+      <div className="w-full h-full top-0 left-0 transform -scale-x-100 bg-black opacity-50 group-hover:left-full transition-all duration-150" />
       <p
         className={cx(
           'text-5xl lg:text-7xl font-bold uppercase select-none p-0 m-0',

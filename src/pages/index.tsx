@@ -13,11 +13,11 @@ class Home extends React.Component {
           <GridItem
             top
             left
-            background=""
             text="Software"
+            background=""
             className="border-b-4 lg:border-b-0 lg:border-r-4"
           />
-          <GridItem bottom right background="" text="Lighting" />
+          <GridItem bottom right background="" text="Lighting" background="/images/lfx.png" />
         </div>
       </div>
     );
