@@ -6,7 +6,7 @@ class Home extends React.Component {
     return (
       <div>
         <Head>
-          <title>Amplify App</title>
+          <title>Kolya Venturi</title>
         </Head>
         <section className="section">
           <h1>Amplify App</h1>
