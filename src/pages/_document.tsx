@@ -18,11 +18,19 @@ class Document extends NextDoc {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="en" className="overflow-y">
         <Head />
-        <body className="bg-gray-900">
+        <body className="bg-gray-900 flex flex-col flex-wrap">
           <Main />
           <NextScript />
+          <style jsx global>{`
+            /* Resolves an issue preventing full-height pages */
+            #__next {
+              height: 100vh;
+              display: flex;
+              flex-flow: column;
+            }
+          `}</style>
         </body>
       </Html>
     );
