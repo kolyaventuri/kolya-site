@@ -42,15 +42,18 @@ export const GridItem = ({
   return (
     <div
       className={cx(
-        'text-white cursor-pointer sm:w-full lg:w-1/2 relative p-0 m-0',
+        'text-white cursor-pointer w-full lg:w-1/2 relative p-0 m-0 flex flex-grow',
         className,
       )}
     >
       <p
-        className={cx('text-7xl font-bold uppercase select-none p-0 m-0', {
-          absolute: hasPosition,
-          [vert.join(' ')]: hasPosition,
-        })}
+        className={cx(
+          'text-5xl lg:text-7xl font-bold uppercase select-none p-0 m-0',
+          {
+            absolute: hasPosition,
+            [vert.join(' ')]: hasPosition,
+          },
+        )}
       >
         {text}
       </p>

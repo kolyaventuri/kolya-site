@@ -9,13 +9,13 @@ class Home extends React.Component {
         <Head>
           <title>Kolya Venturi | Home</title>
         </Head>
-        <div className="lg:grid-cols-2 sm:grid-cols-1 lg:grid-rows-1 sm:grid-rows-2 gap-0 flex flex-grow w-full">
+        <div className="flex-grow flex flex-col lg:flex-row">
           <GridItem
             top
             left
             background=""
             text="Software"
-            className="sm:border-b-4 lg:border-r-4"
+            className="border-b-4 lg:border-b-0 lg:border-r-4"
           />
           <GridItem bottom right background="" text="Lighting" />
         </div>
