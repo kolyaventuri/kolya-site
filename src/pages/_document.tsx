@@ -1,8 +1,17 @@
 import * as React from 'react';
-import NextDoc, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
+import NextDoc, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps,
+} from 'next/document';
 
 class Document extends NextDoc {
-  static async getInitialProps(context: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(
+    context: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const initialProps = await NextDoc.getInitialProps(context);
     return {...initialProps};
   }
@@ -11,7 +20,7 @@ class Document extends NextDoc {
     return (
       <Html>
         <Head />
-        <body>
+        <body className="bg-gray-900">
           <Main />
           <NextScript />
         </body>
