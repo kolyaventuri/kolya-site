@@ -1,27 +1,24 @@
-import React from 'react';
+import * as React from 'react';
 import Head from 'next/head';
-import {GridItem} from '../components/grid-item';
 
-class Home extends React.Component {
-  render(): JSX.Element {
-    return (
-      <div className="flex flex-col flex-grow">
-        <Head>
-          <title>Kolya Venturi | Home</title>
-        </Head>
-        <div className="flex-grow flex flex-col lg:flex-row">
-          <GridItem
-            top
-            left
-            text="Software"
-            background=""
-            className="border-b-4 lg:border-b-0 lg:border-r-4"
-          />
-          <GridItem bottom right text="Lighting" background="/images/lfx.png" />
-        </div>
-      </div>
-    );
-  }
-}
+import Intro from '../components/intro';
+import Main from '../components/main';
+
+const Home = (): JSX.Element => {
+  const [isIntroDone, setIntroDone] = React.useState(false);
+
+  const onIntroComplete = () => {
+    setIntroDone(true);
+  };
+
+  return (
+    <div className="flex flex-col flex-grow">
+      <Head>
+        <title>Kolya Venturi | Home</title>
+      </Head>
+      {isIntroDone ? <Main /> : <Intro onComplete={onIntroComplete} />}
+    </div>
+  );
+};
 
 export default Home;

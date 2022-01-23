@@ -20,7 +20,7 @@ class Document extends NextDoc {
     return (
       <Html lang="en" className="overflow-y">
         <Head />
-        <body className="bg-gray-900 flex flex-col flex-wrap">
+        <body className="bg-black flex flex-col flex-wrap">
           <Main />
           <NextScript />
           <style jsx global>{`
