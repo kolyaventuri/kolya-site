@@ -2,6 +2,7 @@ import * as React from 'react';
 
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
+  const [unicorn, setUnicornVisible] = React.useState(false);
   const height = ready ? 'h-2/3' : 'h-0';
 
   React.useEffect(() => {
@@ -10,6 +11,10 @@ const Heading = (): JSX.Element => {
     }, 0);
   }, []);
 
+  const toggleUnicorn = (value: boolean) => {
+    setUnicornVisible(value);
+  };
+
   return (
     <div
       className={`w-full bg-gray-200 transition-height duration-1000 ease-in-out overflow-y-hidden ${height}`}
@@ -17,8 +22,16 @@ const Heading = (): JSX.Element => {
       <div className="flex flex-grow flex-col lg:flex-row">
         <div className="w-full relative p-4 m-0">
           <div className="select-none">
-            <h1 className="font-extrabold text-7xl lg:text-very-large p-0 m-0">
-              hi there.
+            <h1
+              className="font-extrabold text-7xl lg:text-very-large p-0 m-0"
+              onMouseOver={() => {
+                toggleUnicorn(true);
+              }}
+              onMouseOut={() => {
+                toggleUnicorn(false);
+              }}
+            >
+              hi there{unicorn ? <span className="text-md">🦄</span> : '.'}
             </h1>
             <p className="font-bold text-5xl p-0 m-0 ml-2">
               i&apos;m <span className="text-green-500">kolya</span>

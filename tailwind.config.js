@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        md: '1.5rem',
         'very-large': '10em'
       },
       transitionProperty: {
