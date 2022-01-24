@@ -10,7 +10,7 @@ interface BubbleProps {
 const Bubble = ({icon, color, link, justify}: BubbleProps): JSX.Element => {
   return (
     <a
-      className={`bg-${color[0]} hover:bg-${color[1]} cursor-pointer rounded-full p-8 w-48 h-48 grid grid-cols-1 content-center justify-center justify-self-${justify}`}
+      className={`bg-${color[0]} hover:bg-${color[1]} cursor-pointer rounded-full p-8 w-48 my-2 h-48 md:w-40 md:h-40 sm:w-32 sm:h-32 grid grid-cols-1 content-center justify-center lg:justify-self-${justify}`}
       href={link}
       target="_blank"
       rel="noreferrer"
@@ -41,7 +41,7 @@ const bubbles = [
 ];
 
 const Socials = (): JSX.Element => (
-  <ul className="list-none h-full p-8 lg:px-64">
+  <ul className="list-none h-full p-8 lg:px-4">
     {bubbles.map((data, i) => (
       <li key={`bubble-${data.link}`} className="w-full grid grid-rows-1">
         <Bubble
