@@ -1,5 +1,15 @@
+
+
 module.exports = {
-  purge: ['./src/**/*.{ts,tsx}'],
+  purge: {
+    content: ['./src/**/*.{ts,tsx}'],
+    options: {
+      safelist: [
+        'bg-blue-400', 'hover:bg-blue-300', 'bg-gray-800', 'hover:bg-gray-700', 'bg-red-700', 'hover:bg-red-600',
+        'opacity-0', 'opacity-100', 'justify-self-end', 'justify-self-start', 'justify-center', 'content-center'
+      ],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -9,6 +19,9 @@ module.exports = {
       },
       transitionProperty: {
         height: 'height'
+      },
+      height: {
+        '2/3-vh': '66.67vh'
       }
     },
   },

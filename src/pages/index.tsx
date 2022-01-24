@@ -14,7 +14,7 @@ const Home = (): JSX.Element => {
   return (
     <div className="flex flex-col flex-grow">
       <Head>
-        <title>Kolya Venturi | Home</title>
+        <title>Kolya Venturi</title>
       </Head>
       {isIntroDone ? <Main /> : <Intro onComplete={onIntroComplete} />}
     </div>
