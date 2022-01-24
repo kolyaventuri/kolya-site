@@ -18,6 +18,26 @@ const Footer = (): JSX.Element => {
       <p className="p-4 text-right">
         Made with <i className="fal fa-heart text-red-500" /> in Phoenix, AZ
       </p>
+      <p className="text-right p-4 py-0 text-sm text-gray-500">
+        All emojis designed by{' '}
+        <a
+          className="underline"
+          href="https://openmoji.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          OpenMoji
+        </a>{' '}
+        &ndash; the open-source emoji and icon project. License:{' '}
+        <a
+          className="underline"
+          href="https://creativecommons.org/licenses/by-sa/4.0/#"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CC BY-SA 4.0
+        </a>
+      </p>
     </div>
   );
 };

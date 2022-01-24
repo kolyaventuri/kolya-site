@@ -1,6 +1,10 @@
 import * as React from 'react';
 import Socials from './socials';
 
+const Unicorn = (): JSX.Element => (
+  <img src="/apple-icon.png" className="w-12 h-12 p-0 m-0 mt-12 inline" />
+);
+
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
@@ -32,7 +36,7 @@ const Heading = (): JSX.Element => {
                 toggleUnicorn(false);
               }}
             >
-              hi there{unicorn ? <span className="text-md">🦄</span> : '.'}
+              hi there{unicorn ? <Unicorn /> : '.'}
             </h1>
             <p className="font-bold text-5xl p-0 m-0 ml-2">
               i&apos;m <span className="text-green-500">kolya</span>
