@@ -15,7 +15,7 @@ const Footer = (): JSX.Element => {
     <div
       className={`w-full md:h-1/3 relative bottom-0 text-white duration-1000 transition-opacity ${opacity}`}
     >
-      <p className="absolute bottom-0 right-0 p-4">
+      <p className="p-4 text-right">
         Made with <i className="fal fa-heart text-red-500" /> in Phoenix, AZ
       </p>
     </div>

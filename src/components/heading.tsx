@@ -4,7 +4,7 @@ import Socials from './socials';
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
-  const height = ready ? 'min-h-2/3 h-full md:h-2/3' : 'h-0';
+  const height = ready ? 'h-screen md:h-2/3-vh' : 'h-0';
 
   React.useEffect(() => {
     setTimeout(() => {
