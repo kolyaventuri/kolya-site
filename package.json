@@ -10,7 +10,6 @@
     "lint": "npm-run-all lint:*",
     "lint:tsc": "tsc --noEmit",
     "lint:lint": "xo --fix",
-    "lint:style": "stylelint src/styles/**/*.scss",
     "dev": "cross-env ENV=local next -p 4000",
     "build:files": "next build",
     "build:export": "next export",
