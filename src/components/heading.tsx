@@ -8,7 +8,7 @@ const Unicorn = (): JSX.Element => (
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
-  const height = ready ? 'h-screen md:h-2/3-vh' : 'h-0';
+  const height = ready ? 'h-screen md:h-4/5-vh xs:h-auto' : 'h-0';
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -22,7 +22,7 @@ const Heading = (): JSX.Element => {
 
   return (
     <div
-      className={`w-full bg-gray-200 transition-height duration-1000 ease-in-out overflow-y-hidden ${height}`}
+      className={`w-full bg-gray-200 transition-height duration-1000 ease-in-out overflow-y-scroll ${height}`}
     >
       <div className="flex flex-grow flex-col lg:flex-row">
         <div className="w-full relative p-4 m-0">
@@ -110,7 +110,7 @@ const Heading = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="w-full relative p-4 m-0">
+        <div className="w-full lg:w-1/3 relative p-4 m-0">
           <Socials />
         </div>
       </div>
