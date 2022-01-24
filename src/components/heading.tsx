@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Socials from './socials';
 
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
@@ -106,7 +107,7 @@ const Heading = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full relative p-4 m-0">
-          <p>Twitter?</p>
+          <Socials />
         </div>
       </div>
     </div>

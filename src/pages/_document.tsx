@@ -1,3 +1,5 @@
+/* eslint-disable node/prefer-global/process */
+
 import * as React from 'react';
 import NextDoc, {
   Html,
@@ -19,7 +21,12 @@ class Document extends NextDoc {
   render(): JSX.Element {
     return (
       <Html lang="en" className="overflow-y">
-        <Head />
+        <Head>
+          <script
+            src={`https://kit.fontawesome.com/${process.env.FA_TOKEN!}.js`}
+            crossOrigin="anonymous"
+          />
+        </Head>
         <body className="bg-gray-800 flex flex-col flex-wrap">
           <Main />
           <NextScript />
