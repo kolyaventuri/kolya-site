@@ -3,7 +3,7 @@ import * as React from 'react';
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
-  const height = ready ? 'h-2/3' : 'h-0';
+  const height = ready ? 'min-h-2/3 h-full md:h-2/3' : 'h-0';
 
   React.useEffect(() => {
     setTimeout(() => {
