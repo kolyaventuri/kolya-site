@@ -5,8 +5,8 @@ module.exports = {
     content: ['./src/**/*.{ts,tsx}'],
     options: {
       safelist: [
-        'bg-blue-400', 'bg-blue-500', 'bg-gray-800', 'bg-gray-700', 'bg-red-700', 'bg-red-600',
-        'opacity-0', 'opacity-100'
+        'bg-blue-400', 'hover:bg-blue-300', 'bg-gray-800', 'hover:bg-gray-700', 'bg-red-700', 'hover:bg-red-600',
+        'opacity-0', 'opacity-100', 'justify-self-end', 'justify-self-start', 'justify-center', 'content-center'
       ],
     },
   },
