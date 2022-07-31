@@ -63,27 +63,16 @@ const Heading = (): JSX.Element => {
                 <li className="py-2">
                   <p>
                     i focus on the frontend in{' '}
-                    <span className="font-semibold">React</span>{' '}
-                    and{' '}
-                    <span className="font-semibold">
-                      TypeScript
-                    </span>
-                    , and{' '}
-                    <span className="font-semibold">AWS</span> on
-                    the backend.
+                    <span className="font-semibold">React</span> and{' '}
+                    <span className="font-semibold">TypeScript</span>, and{' '}
+                    <span className="font-semibold">AWS</span> on the backend.
                   </p>
                 </li>
                 <li className="py-2">
                   <p>
                     i&apos;m a self-taught{' '}
-                    <span className="font-semibold">
-                      lighting designer
-                    </span>{' '}
-                    and{' '}
-                    <span className="font-semibold">
-                      coffee enthusiast
-                    </span>
-                    .
+                    <span className="font-semibold">lighting designer</span> and{' '}
+                    <span className="font-semibold">coffee enthusiast</span>.
                   </p>
                 </li>
                 <li className="py-2">
