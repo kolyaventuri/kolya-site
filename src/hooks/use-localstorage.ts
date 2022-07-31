@@ -36,8 +36,8 @@ export const useLocalStorage = <T = unknown>(
     };
 
     if (window?.localStorage) {
-      getRef.current = window.localStorage.getItem;
-      setRef.current = window.localStorage.setItem;
+      getRef.current = window.localStorage.getItem.bind(window.localStorage);
+      setRef.current = window.localStorage.setItem.bind(window.localStorage);
 
       getCurrentValues();
     }

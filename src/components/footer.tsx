@@ -1,6 +1,9 @@
 import * as React from 'react';
+import {useI18N} from '../hooks/use-i18n';
+import {HTMLReplace} from './html-replace';
 
 const Footer = (): JSX.Element => {
+  const getIntlString = useI18N();
   const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {
@@ -16,27 +19,39 @@ const Footer = (): JSX.Element => {
       className={`w-full md:h-1/3 relative bottom-0 text-white duration-1000 transition-opacity ${opacity}`}
     >
       <p className="p-4 text-right">
-        Made with <i className="fal fa-heart text-red-500" /> in Phoenix, AZ
+        <HTMLReplace
+          tagMap={[() => <i className="fal fa-heart text-red-500" />]}
+        >
+          {getIntlString('footer.madeWithLove')}
+        </HTMLReplace>
       </p>
       <p className="text-right p-4 py-0 text-sm text-gray-500">
-        All emojis designed by{' '}
-        <a
-          className="underline"
-          href="https://openmoji.org/"
-          target="_blank"
-          rel="noreferrer"
+        <HTMLReplace
+          tagMap={[
+            (c) => (
+              <a
+                className="underline"
+                href="https://openmoji.org/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {c}
+              </a>
+            ),
+            (c) => (
+              <a
+                className="underline"
+                href="https://creativecommons.org/licenses/by-sa/4.0/#"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {c}
+              </a>
+            ),
+          ]}
         >
-          OpenMoji
-        </a>{' '}
-        &ndash; the open-source emoji and icon project. License:{' '}
-        <a
-          className="underline"
-          href="https://creativecommons.org/licenses/by-sa/4.0/#"
-          target="_blank"
-          rel="noreferrer"
-        >
-          CC BY-SA 4.0
-        </a>
+          {getIntlString('footer.license')}
+        </HTMLReplace>
       </p>
     </div>
   );

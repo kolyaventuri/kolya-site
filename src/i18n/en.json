@@ -1,0 +1,17 @@
+{
+  "header": {
+    "title": "hi there",
+    "subtitle": "i'm <em>kolya</em>"
+  },
+  "items": {
+    "whoIAm": "i'm a software engineer based out of <em>Phoenix, Arizona</em>.",
+    "whatIDo": "i'm passionately building products to <em>connect, engage, empower, and inspire</em>.",
+    "focus": "i focus on the frontend in <em>React</em> and <em>TypeScript</em>, and <em>AWS</em> on the backend.",
+    "interests": "i'm a self-taught <em>lighting designer</em> and <em>coffee enthusiast</em>.",
+    "reachMe": "you can reach me on Twitter <em>@KolyaVenturi</em> or drop me a line at <em>me@kolya.co</em>"
+  },
+  "footer": {
+    "madeWithLove": "Made with <em></em> in Phoenix, AZ",
+    "license": "All emojis designed by <em>OpenMoji</em> &ndash; the open-source emoji and icon project. License: <em>CC BY-SA 4.0</em>"
+  }
+}

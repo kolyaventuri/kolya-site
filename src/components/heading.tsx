@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {useI18N} from '../hooks/use-i18n';
+import {HTMLReplace} from './html-replace';
 import Socials from './socials';
 
 const Unicorn = (): JSX.Element => (
@@ -8,6 +10,7 @@ const Unicorn = (): JSX.Element => (
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
+  const getIntlString = useI18N();
   const height = ready ? 'h-screen md:h-4/5-vh xs:h-auto' : 'h-0';
 
   React.useEffect(() => {
@@ -37,64 +40,97 @@ const Heading = (): JSX.Element => {
                   toggleUnicorn(false);
                 }}
               >
-                hi there{unicorn ? <Unicorn /> : '.'}
+                {getIntlString('header.title')}
+                {unicorn ? <Unicorn /> : '.'}
               </h1>
               <p className="font-bold text-5xl p-0 m-0 ml-1">
-                i&apos;m <span className="text-green-500">kolya</span>
+                <HTMLReplace
+                  tagMap={[(c) => <span className="text-green-500">{c}</span>]}
+                >
+                  {getIntlString('header.subtitle')}
+                </HTMLReplace>
               </p>
             </span>
             <div className="w-3/4 p-8 pr-4 pl-0 lg:pl-8 text-xl">
               <ul className="list-none leading-7">
                 <li className="py-2">
                   <p>
-                    i&apos;m a software engineer based out of{' '}
-                    <span className="font-semibold">Phoenix, Arizona</span>.
-                  </p>
-                </li>
-                <li className="py-2">
-                  <p>
-                    i&apos;m passionately building products to{' '}
-                    <span className="font-semibold">connect</span>,{' '}
-                    <span className="font-semibold">engage</span>,{' '}
-                    <span className="font-semibold">empower</span>, and{' '}
-                    <span className="font-semibold">inspire</span>.
-                  </p>
-                </li>
-                <li className="py-2">
-                  <p>
-                    i focus on the frontend in{' '}
-                    <span className="font-semibold">React</span> and{' '}
-                    <span className="font-semibold">TypeScript</span>, and{' '}
-                    <span className="font-semibold">AWS</span> on the backend.
-                  </p>
-                </li>
-                <li className="py-2">
-                  <p>
-                    i&apos;m a self-taught{' '}
-                    <span className="font-semibold">lighting designer</span> and{' '}
-                    <span className="font-semibold">coffee enthusiast</span>.
-                  </p>
-                </li>
-                <li className="py-2">
-                  <p>
-                    you can reach me on Twitter{' '}
-                    <a
-                      className="text-blue-500 font-semibold underline"
-                      href="https://twitter.com/kolyaventuri"
-                      target="_blank"
-                      rel="noreferrer"
+                    <HTMLReplace
+                      tagMap={[
+                        (c) => <span className="font-semibold">{c}</span>,
+                      ]}
                     >
-                      @KolyaVenturi
-                    </a>{' '}
-                    or drop me a line at{' '}
-                    <a
-                      className="text-blue-500 font-semibold underline"
-                      href="mailto:me@kolya.co"
-                      target="_blank"
-                      rel="noreferrer"
+                      {getIntlString('items.whoIAm')}
+                    </HTMLReplace>
+                  </p>
+                </li>
+                <li className="py-2">
+                  <p>
+                    <HTMLReplace
+                      tagMap={[
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                      ]}
                     >
-                      me@kolya.co
-                    </a>
+                      {getIntlString('items.whatIDo')}
+                    </HTMLReplace>
+                  </p>
+                </li>
+                <li className="py-2">
+                  <p>
+                    <HTMLReplace
+                      tagMap={[
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                      ]}
+                    >
+                      {getIntlString('items.focus')}
+                    </HTMLReplace>
+                  </p>
+                </li>
+                <li className="py-2">
+                  <p>
+                    <HTMLReplace
+                      tagMap={[
+                        (c) => <span className="font-semibold">{c}</span>,
+                        (c) => <span className="font-semibold">{c}</span>,
+                      ]}
+                    >
+                      {getIntlString('items.interests')}
+                    </HTMLReplace>
+                  </p>
+                </li>
+                <li className="py-2">
+                  <p>
+                    <HTMLReplace
+                      tagMap={[
+                        (c) => (
+                          <a
+                            className="text-blue-500 font-semibold underline"
+                            href="https://twitter.com/kolyaventuri"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {c}
+                          </a>
+                        ),
+                        (c) => (
+                          <a
+                            className="text-blue-500 font-semibold underline"
+                            href="mailto:me@kolya.co"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {c}
+                          </a>
+                        ),
+                      ]}
+                    >
+                      {getIntlString('items.reachMe')}
+                    </HTMLReplace>
                   </p>
                 </li>
               </ul>

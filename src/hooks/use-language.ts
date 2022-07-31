@@ -1,6 +1,6 @@
 import {useLocalStorage} from './use-localstorage';
 
-type Language = 'en' | 'sv';
+export type Language = 'en' | 'sv';
 
 type UseLanguageResult = [Language, (lang: Language) => void];
 
