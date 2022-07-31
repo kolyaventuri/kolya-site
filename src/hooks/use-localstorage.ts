@@ -15,6 +15,18 @@ export const useLocalStorage = <T = unknown>(
   const getRef = React.useRef<LocalStorage['get']>();
   const setRef = React.useRef<LocalStorage['set']>();
 
+  const setValue = (newValue: T) => {
+    if (setRef.current) {
+      const stringValue =
+        typeof newValue === 'string'
+          ? (newValue as unknown as string)
+          : JSON.stringify(newValue);
+
+      setRef.current(name, stringValue);
+      setValueFn(newValue);
+    }
+  };
+
   React.useEffect(() => {
     const getCurrentValues = () => {
       if (!getRef.current) {
@@ -35,25 +47,20 @@ export const useLocalStorage = <T = unknown>(
       }
     };
 
+    const initialize = () => {
+      if (getRef.current?.(name) === null) {
+        setValue(initial);
+      }
+    };
+
     if (window?.localStorage) {
       getRef.current = window.localStorage.getItem.bind(window.localStorage);
       setRef.current = window.localStorage.setItem.bind(window.localStorage);
 
+      initialize();
       getCurrentValues();
     }
-  }, [name]);
-
-  const setValue = (newValue: T) => {
-    if (setRef.current) {
-      const stringValue =
-        typeof newValue === 'string'
-          ? (newValue as unknown as string)
-          : JSON.stringify(newValue);
-
-      setRef.current(name, stringValue);
-      setValueFn(newValue);
-    }
-  };
+  }, [name, initial]);
 
   return [value, setValue];
 };
