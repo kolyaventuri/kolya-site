@@ -1,8 +1,25 @@
+import * as React from 'react';
+
+import {LanguageContext} from '../context/language';
+import {Language} from '../types';
 import {useLocalStorage} from './use-localstorage';
 
-export type Language = 'en' | 'sv';
+type UseLanguageResult = [Language, (lang: Language) => void, boolean];
 
-type UseLanguageResult = [Language, (lang: Language) => void];
+export const useLanguage = (): UseLanguageResult => {
+  const langContext = React.useContext(LanguageContext);
 
-export const useLanguage = (): UseLanguageResult =>
-  useLocalStorage<Language>('lang', 'en');
+  const [lang, setLangFn, loading] = useLocalStorage<Language>('lang', 'en');
+  const setLang = (language: Language) => {
+    langContext.language = language;
+    setLangFn(language);
+  };
+
+  React.useEffect(() => {
+    if (lang) {
+      setLang(lang);
+    }
+  }, [lang]);
+
+  return [langContext.language, setLang, loading];
+};

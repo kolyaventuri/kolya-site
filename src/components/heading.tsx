@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { LanguageContext } from '../context/language';
 import {useI18N} from '../hooks/use-i18n';
 import {HTMLReplace} from './html-replace';
 import Socials from './socials';
+import Toggle from './language-toggle';
+import {useLanguage} from '../hooks/use-language';
 
 const Unicorn = (): JSX.Element => (
   <img src="/apple-icon.png" className="w-12 h-12 p-0 m-0 mt-12 inline" />
@@ -10,6 +13,7 @@ const Unicorn = (): JSX.Element => (
 const Heading = (): JSX.Element => {
   const [ready, setReady] = React.useState(false);
   const [unicorn, setUnicornVisible] = React.useState(false);
+  const [, setLanguage] = useLanguage();
   const getIntlString = useI18N();
   const height = ready ? 'h-screen md:h-4/5-vh xs:h-auto' : 'h-0';
 
@@ -21,6 +25,10 @@ const Heading = (): JSX.Element => {
 
   const toggleUnicorn = (value: boolean) => {
     setUnicornVisible(value);
+  };
+
+  const handleChange = (enabled: boolean) => {
+    setLanguage(enabled ? 'sv' : 'en');
   };
 
   return (
@@ -138,6 +146,7 @@ const Heading = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full lg:w-1/3 relative p-4 m-0">
+          <Toggle onChange={handleChange}/>
           <Socials />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import StringFormatter from 'quickstring';
-import {Language} from '../hooks/use-language';
+import {Language} from '../types';
 
 import english from './en.json';
 import swedish from './sv.json';

@@ -5,13 +5,13 @@ interface LocalStorage {
   set: typeof window.localStorage.setItem;
 }
 
-type LocalStorageResult<T> = [T, (value: T) => void];
+type LocalStorageResult<T> = [T | undefined, (value: T) => void, boolean];
 
 export const useLocalStorage = <T = unknown>(
   name: string,
   initial: T,
 ): LocalStorageResult<T> => {
-  const [value, setValueFn] = React.useState<T>(initial);
+  const [value, setValueFn] = React.useState<T>();
   const getRef = React.useRef<LocalStorage['get']>();
   const setRef = React.useRef<LocalStorage['set']>();
 
@@ -62,5 +62,5 @@ export const useLocalStorage = <T = unknown>(
     }
   }, [name, initial]);
 
-  return [value, setValue];
+  return [value, setValue, value === undefined];
 };
